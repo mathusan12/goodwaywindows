@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodway Windows | Premium Canadian Windows</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        cream: '#FAFAF8',
+                        graphite: '#1C1C1E',
+                        gold: '#C5A880',
+                        sand: '#EBE9E4'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream text-graphite font-sans antialiased selection:bg-gold selection:text-white scroll-smooth flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 xl:px-12 flex items-center justify-between h-16 sm:h-18 md:h-20">
+            <a href="#" class="font-serif tracking-tighter text-xl sm:text-2xl font-semibold uppercase text-white flex items-center gap-1 nav-brand">
+                GOODWAY
+            </a>
+    
+            <div class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium tracking-wide nav-links">
+                <a href="#products" class="hover:text-gold transition-colors duration-300">Products</a>
+                <a href="#why-us" class="hover:text-gold transition-colors duration-300">Engineering</a>
+                <a href="#process" class="hover:text-gold transition-colors duration-300">Process</a>
+                <a href="#projects" class="hover:text-gold transition-colors duration-300">Projects</a>
+            </div>
+    
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="#quote" class="hidden md:flex items-center justify-center px-5 lg:px-6 py-2.5 bg-white/10 text-white text-[11px] lg:text-xs font-medium tracking-widest uppercase rounded-full border border-white/20 backdrop-blur-sm hover:bg-gold hover:border-gold transition-all duration-500 nav-cta">
+                    Get a Quote
+                </a>
+    
+                <button id="menu-btn" class="md:hidden text-white flex items-center nav-menu-btn">
+                    <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24" stroke-width="1.5"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 pt-2 bg-white/95 backdrop-blur-xl shadow-lg">
+            <div class="flex flex-col gap-4 text-sm font-medium text-graphite">
+                <a href="#products" class="py-2 border-b border-black/5">Products</a>
+                <a href="#why-us" class="py-2 border-b border-black/5">Engineering</a>
+                <a href="#process" class="py-2 border-b border-black/5">Process</a>
+                <a href="#projects" class="py-2 border-b border-black/5">Projects</a>
+                <a href="#quote" class="mt-2 flex items-center justify-center px-6 py-3 bg-graphite text-white text-xs font-medium tracking-widest uppercase rounded-full">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="photos/hero.png" alt="Luxury home with premium windows and doors" class="hero-img w-full h-full object-cover object-center">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+    
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 text-center flex flex-col items-center pt-28 sm:pt-32 md:pt-36">
+            <span class="text-gold text-[10px] sm:text-xs tracking-[0.2em] font-medium uppercase mb-4 sm:mb-6 animate-fade-in opacity-0">
+                Ontario's Premier Choice
+            </span>
+    
+            <h1 class="text-white font-serif text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] tracking-tight font-semibold leading-[1.02] sm:leading-[1.05] mb-6 sm:mb-8 animate-fade-in delay-100 opacity-0">
+                More Glass.<br>
+                <span class="italic font-light text-white/90">More Light.</span><br>
+                More Luxury.
+            </h1>
+    
+            <p class="text-white/80 text-sm sm:text-base md:text-lg font-light max-w-xs sm:max-w-xl md:max-w-2xl mb-8 sm:mb-10 md:mb-12 animate-fade-in delay-200 opacity-0 leading-relaxed">
+                Premium replacement windows engineered exclusively for Canadian homes. Experience the perfect intersection of architectural beauty and thermal performance.
+            </p>
+    
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto animate-fade-in delay-300 opacity-0">
+                <a href="#quote" class="flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-graphite text-sm font-medium rounded-full hover:bg-gold hover:text-white transition-all duration-500 group min-w-[200px]">
+                    Get Free Quote
+                    <iconify-icon icon="solar:arrow-right-linear" width="18" height="18" stroke-width="1.5" class="ml-2 group-hover:translate-x-1 transition-transform"></iconify-icon>
+                </a>
+    
+                <a href="#products" class="flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-transparent border border-white/30 text-white backdrop-blur-sm text-sm font-medium rounded-full hover:bg-white/10 transition-all duration-500 min-w-[200px]">
+                    Explore Collection
+                </a>
+            </div>
+        </div>
+    
+        <div class="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 text-white/50 animate-bounce flex flex-col items-center gap-1 sm:gap-2">
+            <span class="text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
+            <iconify-icon icon="solar:mouse-minimalistic-linear" width="18" height="18" stroke-width="1.5"></iconify-icon>
+        </div>
+    </header>
+
+    <!-- Trust Bar -->
+<div class="w-full bg-white border-b border-sand py-8 md:py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-sand/50">
+        
+<!-- Made in Canada -->
+<div class="flex flex-col items-center justify-center gap-3">
+    <div class="flex justify-center items-center w-[24px] h-[24px]">
+        <img 
+            src="photos/leaf.png" 
+            alt="Made in Canada" 
+            class="w-full h-full object-contain scale-110"
+        >
+    </div>
+    <span class="text-[11px] md:text-xs font-medium tracking-[0.28em] text-graphite/70 uppercase">
+        Made in Canada
+    </span>
+</div>
+
+        <!-- Energy Efficient -->
+        <div class="flex flex-col items-center justify-center gap-3">
+            <iconify-icon icon="solar:leaf-linear" width="24" height="24" class="text-gold"></iconify-icon>
+            <span class="text-[11px] md:text-xs font-medium tracking-[0.28em] text-graphite/70 uppercase">
+                Energy Efficient
+            </span>
+        </div>
+
+        <!-- Pro Installation -->
+        <div class="flex flex-col items-center justify-center gap-3">
+            <iconify-icon icon="solar:home-smile-linear" width="24" height="24" class="text-gold"></iconify-icon>
+            <span class="text-[11px] md:text-xs font-medium tracking-[0.28em] text-graphite/70 uppercase">
+                Pro Installation
+            </span>
+        </div>
+
+        <!-- Warranty -->
+        <div class="flex flex-col items-center justify-center gap-3">
+            <iconify-icon icon="solar:shield-check-linear" width="24" height="24" class="text-gold"></iconify-icon>
+            <span class="text-[11px] md:text-xs font-medium tracking-[0.28em] text-graphite/70 uppercase">
+                Warranty Backed
+            </span>
+        </div>
+
+    </div>
+</div>
+
+ <!-- Product Showcase -->
+<section id="products" class="py-24 md:py-32 bg-[#faf9f6] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 xl:px-12">
+        
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14 md:mb-16 reveal">
+            <div class="max-w-2xl">
+                <span class="text-[11px] md:text-xs text-[#B89C65] uppercase tracking-[0.28em] font-medium mb-4 block">
+                    The Collection
+                </span>
+                <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight text-[#1c1c1a] leading-[1.02]">
+                    Crafted to frame light,<br>space, and luxury.
+                </h2>
+                <p class="mt-5 text-sm md:text-base text-[#1c1c1a]/60 font-light max-w-xl leading-relaxed">
+                    Discover premium windows and doors designed for architectural elegance, everyday comfort, and long-term performance.
+                </p>
+            </div>
+
+            <a href="/products.html" class="mt-2 lg:mt-0 text-sm font-medium border-b border-[#1c1c1a] pb-1 hover:text-[#B89C65] hover:border-[#B89C65] transition-colors flex items-center gap-2 w-fit">
+                View All Products
+                <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
+            
+            <!-- Windows -->
+            <a href="/windows.html" class="group block reveal transform transition-all duration-500 hover:-translate-y-4">
+                <div class="relative h-[420px] rounded-[30px] overflow-hidden border border-black/5 shadow-[0_22px_70px_rgba(0,0,0,0.10)] transition-all duration-500 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.18)]">
+                    
+                    <img 
+                        src="photos/windows-card.png" 
+                        alt="Luxury house windows" 
+                        class="product-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+
+                    <!-- Luxury gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+                    <!-- Soft top sheen -->
+                    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.05)_18%,rgba(255,255,255,0)_42%)] opacity-60 pointer-events-none"></div>
+
+                    <!-- Content -->
+                    <div class="absolute inset-x-0 bottom-0 p-7 md:p-8 text-white z-10">
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-white/65 block mb-3">
+                            01 / Collection
+                        </span>
+                        <h3 class="font-serif text-[28px] md:text-[30px] font-medium leading-none mb-3">
+                            Windows
+                        </h3>
+                        <p class="text-sm text-white/80 font-light leading-relaxed mb-5 max-w-[90%]">
+                            Refined window systems crafted for daylight, comfort, and architectural clarity.
+                        </p>
+                        <div class="text-sm text-white font-light flex items-center gap-2">
+                            Explore Collection
+                            <iconify-icon 
+                                icon="solar:arrow-right-linear"
+                                class="transition-all duration-300 group-hover:translate-x-1"
+                            ></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Front Doors -->
+            <a href="/front-doors.html" class="group block reveal delay-100 transform transition-all duration-500 hover:-translate-y-4">
+                <div class="relative h-[420px] rounded-[30px] overflow-hidden border border-black/5 shadow-[0_22px_70px_rgba(0,0,0,0.10)] transition-all duration-500 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.18)]">
+                    
+                    <img 
+                        src="photos/front-door-card.png" 
+                        alt="Luxury front entry door" 
+                        class="product-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.05)_18%,rgba(255,255,255,0)_42%)] opacity-60 pointer-events-none"></div>
+
+                    <div class="absolute inset-x-0 bottom-0 p-7 md:p-8 text-white z-10">
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-white/65 block mb-3">
+                            02 / Collection
+                        </span>
+                        <h3 class="font-serif text-[28px] md:text-[30px] font-medium leading-none mb-3">
+                            Front Doors
+                        </h3>
+                        <p class="text-sm text-white/80 font-light leading-relaxed mb-5 max-w-[90%]">
+                            Striking entry systems that balance security, craftsmanship, and first impressions.
+                        </p>
+                        <div class="text-sm text-white font-light flex items-center gap-2">
+                            Explore Collection
+                            <iconify-icon 
+                                icon="solar:arrow-right-linear"
+                                class="transition-all duration-300 group-hover:translate-x-1"
+                            ></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Patio Doors -->
+            <a href="/patio-doors.html" class="group block reveal delay-200 transform transition-all duration-500 hover:-translate-y-4">
+                <div class="relative h-[420px] rounded-[30px] overflow-hidden border border-black/5 shadow-[0_22px_70px_rgba(0,0,0,0.10)] transition-all duration-500 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.18)]">
+                    
+                    <img 
+                        src="photos/patio-door-card.png" 
+                        alt="Luxury patio sliding doors" 
+                        class="product-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.05)_18%,rgba(255,255,255,0)_42%)] opacity-60 pointer-events-none"></div>
+
+                    <div class="absolute inset-x-0 bottom-0 p-7 md:p-8 text-white z-10">
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-white/65 block mb-3">
+                            03 / Collection
+                        </span>
+                        <h3 class="font-serif text-[28px] md:text-[30px] font-medium leading-none mb-3">
+                            Patio Doors
+                        </h3>
+                        <p class="text-sm text-white/80 font-light leading-relaxed mb-5 max-w-[90%]">
+                            Elegant sliding and patio systems that open interiors to light, views, and flow.
+                        </p>
+                        <div class="text-sm text-white font-light flex items-center gap-2">
+                            Explore Collection
+                            <iconify-icon 
+                                icon="solar:arrow-right-linear"
+                                class="transition-all duration-300 group-hover:translate-x-1"
+                            ></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Window Walls -->
+            <a href="/window-walls.html" class="group block reveal delay-300 transform transition-all duration-500 hover:-translate-y-4">
+                <div class="relative h-[420px] rounded-[30px] overflow-hidden border border-black/5 shadow-[0_22px_70px_rgba(0,0,0,0.10)] transition-all duration-500 group-hover:shadow-[0_40px_100px_rgba(0,0,0,0.18)]">
+                    
+                    <img 
+                        src="photos/window-wall-card.png" 
+                        alt="Luxury window wall system" 
+                        class="product-card-image absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    >
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                    <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.18)_0%,rgba(255,255,255,0.05)_18%,rgba(255,255,255,0)_42%)] opacity-60 pointer-events-none"></div>
+
+                    <div class="absolute inset-x-0 bottom-0 p-7 md:p-8 text-white z-10">
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-white/65 block mb-3">
+                            04 / Collection
+                        </span>
+                        <h3 class="font-serif text-[28px] md:text-[30px] font-medium leading-none mb-3">
+                            Window Walls
+                        </h3>
+                        <p class="text-sm text-white/80 font-light leading-relaxed mb-5 max-w-[90%]">
+                            Expansive glazed systems designed to dissolve boundaries between indoors and out.
+                        </p>
+                        <div class="text-sm text-white font-light flex items-center gap-2">
+                            Explore Collection
+                            <iconify-icon 
+                                icon="solar:arrow-right-linear"
+                                class="transition-all duration-300 group-hover:translate-x-1"
+                            ></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+    <!-- Why Goodway (Feature Icons) -->
+    <section id="why-us" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <h2 class="font-serif text-3xl md:text-5xl tracking-tight font-semibold mb-6">Designed for Excellence</h2>
+                <p class="text-graphite/60 text-sm md:text-base font-light">Every Goodway window is a marvel of modern engineering, built specifically to conquer the extreme temperature shifts of the Canadian climate.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-cream flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors duration-300">
+                        <iconify-icon icon="solar:sun-fog-linear" width="36" height="36" class="text-graphite group-hover:text-gold transition-colors duration-300"></iconify-icon>
+                    </div>
+                    <h4 class="font-sans font-medium text-lg tracking-tight mb-2">Climate Engineered</h4>
+                    <p class="text-xs text-graphite/60 font-light leading-relaxed">Formulated vinyl and insulated glass blocks extreme winter cold and summer heat.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-cream flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors duration-300">
+                        <iconify-icon icon="solar:shield-star-linear" width="36" height="36" class="text-graphite group-hover:text-gold transition-colors duration-300"></iconify-icon>
+                    </div>
+                    <h4 class="font-sans font-medium text-lg tracking-tight mb-2">Unmatched Durability</h4>
+                    <p class="text-xs text-graphite/60 font-light leading-relaxed">Reinforced multi-chamber frames that will never warp, peel, or fade over time.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-cream flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors duration-300">
+                        <iconify-icon icon="solar:leaf-linear" width="36" height="36" class="text-graphite group-hover:text-gold transition-colors duration-300"></iconify-icon>
+                    </div>
+                    <h4 class="font-sans font-medium text-lg tracking-tight mb-2">Energy Mastery</h4>
+                    <p class="text-xs text-graphite/60 font-light leading-relaxed">Low-E coatings and Argon gas fills significantly reduce your monthly utility bills.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center group">
+                    <div class="w-20 h-20 rounded-2xl bg-cream flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors duration-300">
+                        <iconify-icon icon="solar:tools-linear" width="36" height="36" class="text-graphite group-hover:text-gold transition-colors duration-300"></iconify-icon>
+                    </div>
+                    <h4 class="font-sans font-medium text-lg tracking-tight mb-2">Flawless Install</h4>
+                    <p class="text-xs text-graphite/60 font-light leading-relaxed">Installed by in-house craftsmen, ensuring a perfect, airtight seal every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Feature Section (Magic Window style) -->
+    <section class="py-0 bg-graphite text-white overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <div class="relative h-[50vh] lg:h-auto min-h-[600px]">
+                <img src="photos/window-feature.png" alt="Window Detail" class="absolute inset-0 w-full h-full object-cover object-center opacity-80">
+            </div>
+
+            <div class="p-12 md:p-24 flex flex-col justify-center bg-graphite relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+
+                <span class="text-gold text-xs tracking-widest font-medium uppercase mb-4 block">The Goodway Difference</span>
+                <h2 class="font-serif text-3xl md:text-5xl tracking-tight font-semibold mb-12 leading-tight">
+                    Less Frame.<br>Infinite View.
+                </h2>
+
+                <div class="space-y-10">
+                    <div class="flex gap-6">
+                        <div class="mt-1">
+                            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold">
+                                <iconify-icon icon="solar:maximize-square-minimalistic-linear" width="16" height="16"></iconify-icon>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2 tracking-tight">Slim Architectural Profiles</h4>
+                            <p class="text-white/60 text-sm font-light leading-relaxed">Our proprietary extrusion process allows for frames up to 30% narrower than standard vinyl, maximizing your glass surface area.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="mt-1">
+                            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold">
+                                <iconify-icon icon="solar:layers-minimalistic-linear" width="16" height="16"></iconify-icon>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2 tracking-tight">Triple-Seal Technology</h4>
+                            <p class="text-white/60 text-sm font-light leading-relaxed">Advanced continuous weatherstripping creates an impenetrable barrier against wind, rain, and exterior noise pollution.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="mt-1">
+                            <div class="w-8 h-8 rounded-full border border-gold/30 flex items-center justify-center text-gold">
+                                <iconify-icon icon="solar:slider-minimalistic-horizontal-linear" width="16" height="16"></iconify-icon>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-lg mb-2 tracking-tight">Precision Hardware</h4>
+                            <p class="text-white/60 text-sm font-light leading-relaxed">Concealed hinges and nesting handles provide a clean interior aesthetic while ensuring buttery-smooth operation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Visual Parallax -->
+    <section class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-graphite">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2600&auto=format&fit=crop')] bg-cover bg-center bg-fixed opacity-60"></div>
+        <div class="relative z-10 text-center px-6">
+            <h2 class="font-serif text-4xl md:text-6xl text-white tracking-tight font-semibold drop-shadow-lg">
+                Designed for comfort.<br>
+                <span class="italic font-light">Built for life.</span>
+            </h2>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 md:py-32 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="font-serif text-3xl md:text-5xl tracking-tight font-semibold mb-4">A Seamless Experience</h2>
+                <p class="text-graphite/60 text-sm md:text-base font-light">From concept to completion, we handle everything.</p>
+            </div>
+
+            <div class="relative">
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-sand -translate-y-1/2 z-0"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6 relative z-10">
+                    <div class="flex flex-col items-center text-center bg-cream px-4">
+                        <div class="w-16 h-16 rounded-full bg-white border border-sand shadow-sm flex items-center justify-center mb-6 text-gold text-xl font-serif">1</div>
+                        <h4 class="font-medium text-lg tracking-tight mb-2">Free Consultation</h4>
+                        <p class="text-xs text-graphite/60 font-light">In-home assessment and aesthetic styling advice.</p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center bg-cream px-4">
+                        <div class="w-16 h-16 rounded-full bg-white border border-sand shadow-sm flex items-center justify-center mb-6 text-gold text-xl font-serif">2</div>
+                        <h4 class="font-medium text-lg tracking-tight mb-2">Precision Measure</h4>
+                        <p class="text-xs text-graphite/60 font-light">Laser-accurate measurements for a custom, airtight fit.</p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center bg-cream px-4">
+                        <div class="w-16 h-16 rounded-full bg-white border border-sand shadow-sm flex items-center justify-center mb-6 text-gold text-xl font-serif">3</div>
+                        <h4 class="font-medium text-lg tracking-tight mb-2">Custom Manufacturing</h4>
+                        <p class="text-xs text-graphite/60 font-light">Fabricated to your exact specifications in our facility.</p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center bg-cream px-4">
+                        <div class="w-16 h-16 rounded-full bg-graphite text-white shadow-md flex items-center justify-center mb-6 text-xl font-serif">4</div>
+                        <h4 class="font-medium text-lg tracking-tight mb-2">White-Glove Install</h4>
+                        <p class="text-xs text-graphite/60 font-light">Clean, professional installation by certified experts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-white border-t border-sand">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="font-serif text-3xl md:text-5xl tracking-tight font-semibold text-center mb-16">Client Stories</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-cream p-8 rounded-3xl">
+                    <div class="flex gap-1 text-gold mb-6">
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-graphite/80 font-light italic mb-8 leading-relaxed">"The difference in our home's temperature and aesthetics is night and day. The slim frames allowed so much more natural light in. True craftsmanship."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-sand flex items-center justify-center text-xs font-serif text-graphite">M</div>
+                        <div>
+                            <h5 class="text-sm font-medium">Michael T.</h5>
+                            <span class="text-xs text-graphite/50">Oakville, ON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cream p-8 rounded-3xl">
+                    <div class="flex gap-1 text-gold mb-6">
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-graphite/80 font-light italic mb-8 leading-relaxed">"From the initial consultation to the final cleanup, the Goodway team was impeccable. These aren't just windows, they feel like architectural upgrades."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-sand flex items-center justify-center text-xs font-serif text-graphite">S</div>
+                        <div>
+                            <h5 class="text-sm font-medium">Sarah L.</h5>
+                            <span class="text-xs text-graphite/50">Toronto, ON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cream p-8 rounded-3xl">
+                    <div class="flex gap-1 text-gold mb-6">
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold" width="18"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-graphite/80 font-light italic mb-8 leading-relaxed">"We replaced 14 windows. Our heating bill dropped significantly this winter, and the modern look completely transformed our exterior."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-sand flex items-center justify-center text-xs font-serif text-graphite">D</div>
+                        <div>
+                            <h5 class="text-sm font-medium">David R.</h5>
+                            <span class="text-xs text-graphite/50">Burlington, ON</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="quote" class="relative py-32 bg-graphite overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Luxury interior" class="w-full h-full object-cover object-center opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl md:text-6xl text-white tracking-tight font-semibold mb-6">Upgrade Your Home Today</h2>
+            <p class="text-white/70 text-base md:text-lg font-light mb-12 max-w-2xl mx-auto">Schedule a complimentary in-home design consultation and receive a precise, no-obligation quote valid for 30 days.</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="flex items-center justify-center px-10 py-4 bg-gold text-white text-sm font-medium rounded-full hover:bg-white hover:text-graphite transition-all duration-500 shadow-[0_0_20px_rgba(197,168,128,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                    Get Your Free Quote
+                </a>
+                <a href="#" class="flex items-center justify-center px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/20 transition-all duration-500">
+                    <iconify-icon icon="solar:calendar-linear" width="18" height="18" class="mr-2"></iconify-icon>
+                    Book Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-graphite text-white/60 py-12 border-t border-white/10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="col-span-1 md:col-span-2">
+                <a href="#" class="font-serif tracking-tighter text-2xl font-semibold uppercase text-white mb-4 inline-block">
+                    GOODWAY
+                </a>
+                <p class="text-xs font-light max-w-xs leading-relaxed">Premium luxury windows engineered for performance, designed for life. Proudly serving home owners across Ontario, Canada.</p>
+            </div>
+            <div>
+                <h5 class="text-white text-sm font-medium mb-4">Products</h5>
+                <ul class="space-y-2 text-xs font-light">
+                    <li><a href="#" class="hover:text-gold transition-colors">Casement Windows</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Awning Windows</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Sliding Windows</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Custom Shapes</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white text-sm font-medium mb-4">Company</h5>
+                <ul class="space-y-2 text-xs font-light">
+                    <li><a href="#" class="hover:text-gold transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">The Process</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Warranty</a></li>
+                    <li><a href="#" class="hover:text-gold transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-[10px] uppercase tracking-widest">
+            <p>© 2024 Goodway Windows. All rights reserved.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

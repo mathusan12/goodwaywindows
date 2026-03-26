@@ -1,0 +1,425 @@
+/* =========================
+   RESET / GLOBAL
+========================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body > * {
+    max-width: 100%;
+}
+
+/* Prevent accidental horizontal overflow from sections/wrappers */
+section,
+header,
+nav,
+footer,
+div {
+    max-width: 100%;
+}
+
+/* =========================
+   SMOOTH FADE-IN ANIMATION
+========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+#navbar {
+    background: transparent;
+    border-bottom: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+#navbar.scrolled {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(28, 28, 30, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+#navbar .nav-brand,
+#navbar .nav-links a,
+#navbar .nav-menu-btn {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+#navbar.scrolled .nav-brand,
+#navbar.scrolled .nav-links a,
+#navbar.scrolled .nav-menu-btn {
+    color: #1C1C1E;
+}
+
+#navbar .nav-cta {
+    transition: all 0.3s ease;
+}
+
+#navbar.scrolled .nav-cta {
+    background: #1C1C1E;
+    color: white;
+    border-color: transparent;
+}
+
+#navbar.scrolled .nav-cta:hover {
+    background: #C5A880;
+    color: white;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+#hero,
+header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#hero > .absolute,
+header > .absolute {
+    inset: 0;
+}
+
+.hero-img,
+#hero img,
+header img.hero-img,
+header > .absolute img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.16)),
+        linear-gradient(to top, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.12));
+}
+
+/* =========================
+   PREMIUM SCROLLBAR
+========================= */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FAFAF8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #EBE9E4;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C5A880;
+}
+
+/* =========================
+   REVEAL ON SCROLL
+========================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal.delay-100 {
+    transition-delay: 120ms;
+}
+
+.reveal.delay-200 {
+    transition-delay: 240ms;
+}
+
+.reveal.delay-300 {
+    transition-delay: 360ms;
+}
+
+/* =========================
+   PRODUCT CARD SYSTEM
+========================= */
+.card-3d-wrapper {
+    width: 100%;
+    overflow: visible;
+}
+
+.card-3d-inner {
+    position: relative;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        filter 0.45s ease;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.10);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #ddd;
+}
+
+.card-3d-wrapper:hover .card-3d-inner {
+    transform: translateY(-12px);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.18);
+    filter: brightness(1.02);
+}
+
+/* subtle luxury sheen */
+.card-3d-inner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0.05) 18%,
+        rgba(255, 255, 255, 0) 42%
+    );
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* optional added highlight on hover */
+.card-3d-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.12) 0%,
+        rgba(255,255,255,0.02) 22%,
+        rgba(255,255,255,0) 45%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card-3d-wrapper:hover .card-3d-inner::before {
+    opacity: 1;
+}
+
+.card-content-pop {
+    position: relative;
+    z-index: 3;
+    transform: none;
+    transition: transform 0.35s ease;
+}
+
+.card-3d-wrapper:hover .card-content-pop {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   PRODUCT CARD IMAGE CONTROL
+========================= */
+.product-card-image,
+.card-3d-inner .product-card-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.7s ease;
+    will-change: transform;
+    z-index: 0;
+}
+
+.card-3d-wrapper:hover .product-card-image,
+.card-3d-wrapper:hover .card-3d-inner .product-card-image {
+    transform: scale(1.1);
+}
+
+/* =========================
+   RESPONSIVE IMAGE SAFETY
+========================= */
+section img,
+.card-3d-inner img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-img,
+#hero img.hero-img,
+header img.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* product card images must stay full-bleed */
+.card-3d-inner .product-card-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================
+   LARGE TABLET / SMALL LAPTOP
+========================= */
+@media (max-width: 1024px) {
+    #hero,
+    header {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .card-3d-inner {
+        border-radius: 26px;
+    }
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+@media (max-width: 768px) {
+    #hero,
+    header {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .hero-img,
+    #hero img,
+    header img.hero-img,
+    header > .absolute img {
+        object-position: center center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.18)),
+            linear-gradient(to top, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.14));
+    }
+
+    .card-3d-inner {
+        border-radius: 24px;
+    }
+
+    .card-3d-wrapper:hover .card-3d-inner {
+        transform: translateY(-8px);
+    }
+
+    .card-3d-wrapper:hover .card-content-pop {
+        transform: translateY(-1px);
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 640px) {
+    #hero,
+    header {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .hero-img,
+    #hero img,
+    header img.hero-img,
+    header > .absolute img {
+        object-position: 58% center;
+    }
+
+    .card-3d-inner {
+        border-radius: 22px;
+    }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 480px) {
+    .hero-img,
+    #hero img,
+    header img.hero-img,
+    header > .absolute img {
+        object-position: 60% center;
+    }
+
+    .card-3d-wrapper:hover .card-3d-inner {
+        transform: translateY(-5px);
+    }
+}
