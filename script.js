@@ -92,6 +92,57 @@ cardWrappers.forEach((wrapper) => {
 });
 
 /* =========================
+   STATS COUNT-UP ANIMATION
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const statsSection = document.querySelector(".stats-section");
+    const statNumbers = document.querySelectorAll(".stat-number");
+
+    const animateCount = (el) => {
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || "";
+        const duration = 1800;
+        const startTime = performance.now();
+
+        const updateCount = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.floor(easedProgress * target);
+
+            el.textContent = currentValue.toLocaleString() + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                el.textContent = target.toLocaleString() + suffix;
+            }
+        };
+
+        requestAnimationFrame(updateCount);
+    };
+
+    if (statsSection) {
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !statsSection.dataset.animated) {
+                        statsSection.dataset.animated = "true";
+                        statNumbers.forEach((stat, index) => {
+                            setTimeout(() => animateCount(stat), index * 120);
+                        });
+                        observer.unobserve(statsSection);
+                    }
+                });
+            },
+            { threshold: 0.4 }
+        );
+
+        observer.observe(statsSection);
+    }
+});
+
+/* =========================
    OPTIONAL: CLOSE MOBILE MENU
    WHEN WINDOW RESIZES TO DESKTOP
 ========================= */
